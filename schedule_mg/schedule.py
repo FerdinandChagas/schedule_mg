@@ -22,7 +22,7 @@ def verifica_horario(horarios_professor, horarios):
     
     for turma_professor in horarios_professor:
         for outra_turma in horarios:
-            if (turma_professor.professor != outra_turma.professor) and (turma_professor.periodo==outra_turma.periodo) and (turma_professor.bloco==outra_turma.bloco) and (turma_professor.curso==outra_turma.curso):
+            if (turma_professor.professor != outra_turma.professor) and (turma_professor.periodo==outra_turma.periodo) and (turma_professor.bloco==outra_turma.bloco):
                 if verificar_choque(turma_professor.horario, outra_turma.horario):
                     descreve_choque(turma_professor, outra_turma)
 
@@ -61,8 +61,8 @@ def validar_horario(expressao):
 
 def descreve_choque(turma1, turma2):
     print(f"Choque de horários no {turma1.periodo}o período:")
-    print(f"{turma1.codigo} - {turma1.disciplina} - {turma1.professor} - {turma1.horario} - {turma1.bloco}")
-    print(f"{turma2.codigo} - {turma2.disciplina} - {turma2.professor} - {turma2.horario} - {turma2.bloco}")
+    print(f"{turma1.codigo} - {turma1.disciplina} - {turma1.professor} - {turma1.horario} - {turma1.bloco} ({turma1.curso})")
+    print(f"{turma2.codigo} - {turma2.disciplina} - {turma2.professor} - {turma2.horario} - {turma2.bloco} ({turma2.curso})")
 
 def converte_para_turmas(horarios):
 
